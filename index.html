@@ -39,7 +39,33 @@
         <p v-show="error">There is an error</p>
         <p v-show="success">Success!</p>
       </div>
-      
+      <div>
+        <h1>For Loops</h1>
+        <ul>
+          <li v-for="character in characters">{{character}}</li>
+          <li v-bind:key="index" v-for="(sibling, index) in siblings">{{sibling.name}} - {{sibling.age}}</li>
+        </ul>
+        <ul>
+          <li v-bind:key="index" v-for="(sibling, index) in siblings">
+            <ul>
+              <li v-bind:key="index" v-for="(val, key, index) in sibling">
+                {{key}} - {{val}} {{index}}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h1>Punchbag Game</h1>
+        <div id="bag" v-bind:class="{burst: ended}"></div>
+        <div id="bag-health">
+          <div v-bind:style="{ width: health + '%'}"></div>
+        </div>
+        <div id="bag-controls">
+          <button v-on:click="punch" v-show="!ended">Punch</button>
+          <button v-on:click="restart">Restart</button>
+        </div>
+      </div>
     </div>
   <script src="app.js"></script>
 </html>

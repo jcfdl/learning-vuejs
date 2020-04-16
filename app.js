@@ -14,7 +14,24 @@ new Vue({
     available: false,
     nearby: false,
     error: false,
-    success: false
+    success: false,
+    characters: ['Jc', 'Josh', 'Mae'],
+    siblings: [
+      {
+        name: 'Jc',
+        age: 23
+      },
+      {
+        name: 'Josh',
+        age: 21
+      },
+      {
+        name: 'Mae',
+        age: 13
+      },
+    ],
+    health: 100,
+    ended: false,
   },
   methods: {
     greet(time) {
@@ -35,6 +52,16 @@ new Vue({
     },
     logName() {
       console.log(`You entered age ${this.inputAge}`)
+    },
+    punch() {
+      this.health -= 10
+      if(this.health <= 0) {
+        this.ended = true
+      }
+    },
+    restart() {
+      this.health = 100
+      this.ended = false
     }
   },
   computed: {
