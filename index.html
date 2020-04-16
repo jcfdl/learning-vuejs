@@ -31,6 +31,15 @@
         <button v-on:click="nearby = !nearby">Toggle nearby</button>
         <div v-bind:class="compClasses">Yes</div>
       </div>
+      <div>
+        <button v-on:click="error = !error">Toggle Error</button>
+        <button v-on:click="success = !success">Toggle Success</button>
+        <p v-if="error">There is an error</p>
+        <p v-else-if="success">Success!</p>
+        <p v-show="error">There is an error</p>
+        <p v-show="success">Success!</p>
+      </div>
+      
     </div>
   <script src="app.js"></script>
 </html>
