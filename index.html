@@ -26,6 +26,11 @@
         My age + a = {{addToA}}
         My age + b = {{addToB}}
       </div>
+      <div>
+        <button v-on:click="available = !available">Toggle available</button>
+        <button v-on:click="nearby = !nearby">Toggle nearby</button>
+        <div v-bind:class="compClasses">Yes</div>
+      </div>
     </div>
   <script src="app.js"></script>
 </html>
