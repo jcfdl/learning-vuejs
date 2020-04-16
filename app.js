@@ -62,6 +62,9 @@ new Vue({
     restart() {
       this.health = 100
       this.ended = false
+    },
+    getRefs() {
+      console.log(this.$refs)
     }
   },
   computed: {
