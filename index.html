@@ -8,7 +8,24 @@
   </head>
     <div id="root">
       <h1>{{ greet('morning') }}</h1>
-      <p>{{ name }}</p>
+      <input type="text" v-bind:value="name">
+      <p v-html="websiteTag"></p>
+      <button v-on:click.once="add(1)">Add a year</button>
+      <button v-on:click="substract(1)">Substract a year</button>
+      <button v-on:dblclick="add(10)">Add 10 years</button>
+      <button v-on:dblclick="substract(10)">Substract 10 years</button>
+      <p>My age is {{age}}</p>
+      <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
+      <a v-on:click.prevent="click" v-bind:href="link">Website Link</a>
+      <label>Enter your name</label>
+      <input type="text" v-model="inputAge" v-on:keyup.enter="logName" />
+      <p>{{inputAge}}</p>
+      <div>
+        <button v-on:click="a++">Increment A</button>
+        <button v-on:click="b--">Increment B</button>
+        My age + a = {{addToA}}
+        My age + b = {{addToB}}
+      </div>
     </div>
   <script src="app.js"></script>
 </html>
